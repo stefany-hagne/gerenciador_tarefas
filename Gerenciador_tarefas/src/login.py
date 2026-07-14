@@ -26,8 +26,9 @@ def criar_login():
             print("\nConta criada com sucesso!")
             tela_inicial(nome, codigo_usuario=codigo)
 
-        except Exception:
-            print("\nJá existe um usuário com esse login.")
+        except Exception as error:
+            print("\nErro ao criar a conta.")
+            print(error)
 
 
 def entrar():

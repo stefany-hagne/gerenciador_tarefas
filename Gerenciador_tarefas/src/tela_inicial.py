@@ -1,6 +1,7 @@
 from conectar_db import conectar
 from datetime import date
 from criar_tarefa import criar_tarefas
+from listar_tarefas import menu_pesquisa as listar_tarefas
 import random
 
 def tela_inicial(nome, codigo_usuario):
@@ -10,7 +11,8 @@ def tela_inicial(nome, codigo_usuario):
         print(f"Código: {codigo_usuario}")
 
         print("\n1 - Criar tarefa")
-        print("2 - Sair")
+        print("2 - Listar tarefas")
+        print("3 - Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -18,4 +20,7 @@ def tela_inicial(nome, codigo_usuario):
             criar_tarefas(codigo_usuario)
 
         elif opcao == "2":
+            listar_tarefas(codigo_usuario)
+
+        elif opcao == "3":
             break
