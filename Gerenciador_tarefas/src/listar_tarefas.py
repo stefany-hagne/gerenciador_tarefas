@@ -1,4 +1,5 @@
 from conectar_db import conectar
+from obter_status import obter_status
 
 def listar_usuarios():
     with conectar() as conexao:
@@ -164,12 +165,16 @@ def menu_pesquisa(codigo_usuario):
             listar_todas_tarefas()
 
         elif opcao == "2":
+            print("0 - Listar usuários cadastrados")
             print("1 - Minhas tarefas")
             print("2 - Tarefas de outro usuário")
 
             opcao2 = input("Escolha uma opção: ")
 
-            if opcao2 == "1":
+            if opcao2 == "0":
+                listar_usuarios()
+
+            elif opcao2 == "1":
                 listar_minhas_tarefas(codigo_usuario)
             
             elif opcao2 == "2":
@@ -188,17 +193,8 @@ def menu_pesquisa(codigo_usuario):
 
             status_id = int(input("Digite o status da tarefa: "))
 
-            if status_id == 1:
-                status = "Lista de espera"
-            elif status_id == 2:
-                status = "A começar"
-            elif status_id == 3:
-                status = "Em andamento"
-            elif status_id == 4:
-                status = "Revisão"
-            elif status_id == 5:
-                status = "Finalizado"
-            else:
+            status = obter_status(status_id)
+            if status is None: 
                 print("Status inválido.")
                 continue
 

@@ -1,5 +1,6 @@
 from conectar_db import conectar
 from datetime import date
+from obter_status import obter_status
 import random
 
 def criar_tarefas(criador):
@@ -14,17 +15,8 @@ def criar_tarefas(criador):
 
     status_id = int(input("Digite o status da tarefa: "))
 
-    if status_id == 1:
-        status = "Lista de espera"
-    elif status_id == 2:
-        status = "A começar"
-    elif status_id == 3:
-        status = "Em andamento"
-    elif status_id == 4:
-        status = "Revisão"
-    elif status_id == 5:
-        status = "Finalizado"
-    else:
+    status = obter_status(status_id)
+    if status is None:
         print("Status inválido. A tarefa será criada com o status 'Lista de espera'.")
         status = "Lista de espera"
 
