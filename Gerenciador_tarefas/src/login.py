@@ -1,4 +1,5 @@
 from conectar_db import conectar
+import random
 
 
 def criar_login():
@@ -9,9 +10,8 @@ def criar_login():
 
     with conectar() as conexao:
         cursor = conexao.cursor()
-        u_id = 1000
+        u_id = random.randint(1000, 2000)
         codigo = f"U{u_id + 1}"
-        u_id = u_id + 1
 
         try:
             cursor.execute(
