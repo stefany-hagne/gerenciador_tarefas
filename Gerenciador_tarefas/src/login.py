@@ -1,4 +1,5 @@
 from conectar_db import conectar
+from tela_inicial import tela_inicial
 import random
 
 
@@ -23,7 +24,7 @@ def criar_login():
             )
 
             print("\nConta criada com sucesso!")
-            tela_inicial(nome)
+            tela_inicial(nome, codigo_usuario=codigo)
 
         except Exception:
             print("\nJá existe um usuário com esse login.")
@@ -38,7 +39,7 @@ def entrar():
 
         cursor.execute(
             """
-            SELECT nome
+            SELECT codigo, nome
             FROM tabelausers
             WHERE login = ? AND senha = ?
             """,
@@ -48,20 +49,13 @@ def entrar():
         resultado = cursor.fetchone()
 
     if resultado:
-        nome = resultado[0]
+        codigo_usuario = resultado[0]
+        nome = resultado[1]
 
-        print("\nLogin realizado com sucesso!")
-        tela_inicial(nome)
+        tela_inicial(nome, codigo_usuario)
 
     else:
         print("\nPerfil não encontrado.")
-
-
-def tela_inicial(nome):
-    print("\n========================")
-    print(f"Bem-vindo(a), {nome}!")
-    print("========================")
-
 
 def menu():
     while True:
