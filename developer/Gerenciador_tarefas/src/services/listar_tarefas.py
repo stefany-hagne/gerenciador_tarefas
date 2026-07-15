@@ -3,8 +3,8 @@
     O usuário pode pesquisar a tarefa por CRIADOR, STATUS ou por CÓDIGO
 '''
 
-from Gerenciador_tarefas.src.database.conectar_db import conectar
-from Gerenciador_tarefas.src.utils.obter_status import obter_status
+from database.conectar_db import conectar
+from utils.obter_status import obter_status
 
 def listar_usuarios():
     with conectar() as conexao:

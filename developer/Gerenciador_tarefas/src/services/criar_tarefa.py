@@ -7,9 +7,9 @@
     DATAS DE ÚLTIMA ATUALIZAÇÃO E DE CRIAÇÃO
 '''
 
-from Gerenciador_tarefas.src.database.conectar_db import conectar
+from database.conectar_db import conectar
 from datetime import date
-from Gerenciador_tarefas.src.utils.obter_status import obter_status
+from utils.obter_status import obter_status
 import random
 
 def criar_tarefas(criador):

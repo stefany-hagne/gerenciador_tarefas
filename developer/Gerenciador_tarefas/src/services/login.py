@@ -1,7 +1,7 @@
 ## Nesse arquivo contém as funções que realizam a criação do usuário e a validação do seu registro no banco antes do acesso
 
-from Gerenciador_tarefas.src.database.conectar_db import conectar
-from Gerenciador_tarefas.src.views.tela_inicial import tela_inicial
+from database.conectar_db import conectar
+from views.tela_inicial import tela_inicial
 import random
 
 
