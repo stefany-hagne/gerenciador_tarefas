@@ -24,7 +24,8 @@ Python: Linguagem de programação utilizada para desenvolver o projeto.
 
 ## ⚙️ Testes
 
-
+* [Pytest] - Biblioteca python que realiza testes nas funções do código.
+* [Github Actions] - Executa os testes automaticamente para cada pull request.
 
 
 ## 🛠️ Ferramentas e metodologias
