@@ -3,17 +3,16 @@
 import sqlite3
 
 from pathlib import Path
+import sqlite3
+
 
 def conectar():
     caminho_banco = (
-        Path(__file__).parent.parent
+        Path(__file__).parent.parent.parent
         / "db"
         / "gerencia_tarefas_bancodedados.db"
     )
 
-    return sqlite3.connect(caminho_banco)
+    print(caminho_banco)  # teste temporário
 
-conexao = conectar()
-print("Banco conectado com sucesso!")
-conexao.close()
-print("Conexão encerrada.")
+    return sqlite3.connect(caminho_banco)

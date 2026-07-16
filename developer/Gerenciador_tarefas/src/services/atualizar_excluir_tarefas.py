@@ -1,9 +1,9 @@
 ## Nesse arquivo contém a funções necessárias para atualizar ou excluir os registros
 ## O usuário pode alterar os campos RESPONSÁVEL, STATUS e DESCRIÇÃO do registro escolhido
 
-from Gerenciador_tarefas.src.database.conectar_db import conectar
+from database.conectar_db import conectar
 from datetime import date
-from Gerenciador_tarefas.src.utils.obter_status import obter_status
+from utils.obter_status import obter_status
 
 def excluir_tarefa(codigo_tarefa):
     with conectar() as conexao:

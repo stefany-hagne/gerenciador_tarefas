@@ -1,4 +1,4 @@
-from Gerenciador_tarefas.src.database.conectar_db import conectar
+from database.conectar_db import conectar
 
 
 def listar_usuarios():
